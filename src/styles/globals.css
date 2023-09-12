@@ -1,27 +1,144 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.d-none {
+  display: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.input-phone-number input:focus{
+  outline: none !important;
+  border: 1px solid rgb(179, 179, 179) !important;
+  box-shadow: none !important;
+}
+.btn {
+  background: rgb(15, 15, 214);
+}
+.btnSpiner {
+  font-size: 15px;
+}
+.loginIcon {
+  font-size: 100px;
+  color: black;
+}
+.react-tel-input .form-control {
+  @apply !w-full py-5 !text-base;
+}
+.backIcon {
+  transition: 0.1s;
+}
+.backIcon:hover {
+  color: teal;
+}
+.sidebarTwoChatList {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.sidebarTwoChatList::-webkit-scrollbar {
+  display: none;
+}
+.chatList {
+  transition: 0.1s;
+}
+.chatList:hover {
+  background-color: rgb(25, 99, 148);
+  color: #fff;
+}
+.home {
+  width: 60%;
+  height: 100%;
+}
+.body {
+  background-color: rgb(26, 26, 26);
+}
+.messageContainer {
+  height: 80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  user-select: none;
+}
+.messageContainer::-webkit-scrollbar {
+  display: none;
+}
+.messageText {
+  width: fit-content;
+  max-width: 60%;
+}
+@media screen and (max-width: 767px) {
+  .messageText {
+    max-width: 98%;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.messageTextHeading {
+  max-width: 100%;
+}
+.bodyTop {
+  height: 12%;
+}
+.bodyBottom {
+  height: 8%;
+}
+.inputField {
+  width: 91%;
+  border: 2px solid teal;
+}
+.inputField::-moz-focus-outer {
+  border: 2px solid rgba(0, 128, 128, 0.726);
+}
+.sendIcon {
+  width: 8%;
+  height: 97%;
+  font-family: serif;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.top,
+.bottom {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(219, 219, 219, 0.47);
+  font-family: serif;
+}
+.right form, .right .form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+.formInput label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} 
+.formInput label .icon {
+  font-size: 30px;
+  cursor: pointer;
+} 
+.formInput input, .formInput .input{
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.right form button, .right form .button, .button {
+  padding: 10px 12px;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+.right form button disabled, .right .form button disabled {
+  background-color: rgba(3, 92, 92, 0.322);
+  cursor: not-allowed;
 }
