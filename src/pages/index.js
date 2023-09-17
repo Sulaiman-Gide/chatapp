@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import {motion} from 'framer-motion';
 import { Inter } from 'next/font/google'
 import Chat from '../components/Chat';
-import PhoneInput from "react-phone-input-2";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import PhoneInput from 'react-phone-input-2'
 import "react-phone-input-2/lib/style.css";
 import { auth, db, storage  } from "../components/firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
@@ -40,8 +43,7 @@ const userInputs = [
     placeholder: "Wick",
   },
 ];
-
-export default function Home() {
+export default function Home(props) {
 
   const [isClient, setIsClient] = useState(false)
  
@@ -301,14 +303,19 @@ export default function Home() {
                     ) : (
                       <div className='w-full h-screen flex justify-center items-center flex-col'>
                         <img className='relative rounded-full h-20 w-32 md:w-52 md:h-40 mb-2 mx-auto object-cover border-2 border-gray-200' src='/logo_2.jpg' alt=''/>
-                        <label
-                          htmlFor=""
-                          className="font-bold text-2xl text-center my-3 font-serif"
+                        <h1
+                          className="font-bold text-2xl text-center mt-3 mb-1 font-serif"
                         >
-                          Verify Your Mobile Number
-                        </label>
+                          Enter your phone number
+                        </h1>
+                        <p className="text-base">You will receive a 6 digit code for phone number verification</p>
                         <div className="flex justify-center items-center">
-                          <PhoneInput country={"ng"} value={ph} onChange={setPh} className={"input-phone-number h-full"} />
+                          <PhoneInput  
+                            className='phone-input-no-outline'
+                            country={"ng"} 
+                            value={ph} 
+                            onChange={setPh}
+                          />
                         </div>
                         <button
                           onClick={onSignup}

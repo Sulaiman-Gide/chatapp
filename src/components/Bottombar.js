@@ -100,7 +100,7 @@ export default function Bottombar({ id, user }) {
         <div className="flex flex-row justify-center items-center">
           <div className="formInput w-full sm:w-2/5">
             <label htmlFor="file">
-              <AttachFileIcon className="w-5 h-5" />
+              <AttachFileIcon className="w-5 h-5 dark:text-slate-50" />
             </label>
             <input
               type="file"
