@@ -260,7 +260,7 @@ export default function Home(props) {
           >
             <section className="flex items-center justify-center h-screen">
               <div>
-                <Toaster toastOptions={{ duration: 4000 }} />
+                <Toaster toastOptions={{ duration: 4000 }} position="top-right" />
                 <div id="recaptcha-container"></div>
                   <div className="w-screen h-screen">
                     {showOTP ? (
@@ -308,7 +308,7 @@ export default function Home(props) {
                         >
                           Enter your phone number
                         </h1>
-                        <p className="text-base">You will receive a 6 digit code for phone number verification</p>
+                        <p className="text-base text-center font-serif">You will receive a 6 digit code for phone number verification</p>
                         <div className="flex justify-center items-center">
                           <PhoneInput  
                             className='phone-input-no-outline'
