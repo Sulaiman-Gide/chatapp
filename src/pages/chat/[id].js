@@ -305,7 +305,7 @@ export default function Chat() {
           <div className='h-screen bg-transparent lg:p-2 cursor-pointer'>
             <div className='bg-slate-50/25 dark:bg-gray-900 rounded-lg h-full shadow-md'>
               <div className='bodyTop shadow-sm flex items-center top-0 sticky mx-auto px-2'>               
-                <ArrowBackIcon className=" dark:text-slate-50 backIcon" onClick={handleSwitch}/>
+                <ArrowBackIcon className="font-bold text-4xl md:text-5xl dark:text-slate-50 backIcon" onClick={handleSwitch}/>
                   { users && <h1 className='text-xl md:text-2xl dark:text-slate-50 pl-1 pt-1'>{secondValue}</h1>}
               </div>
 

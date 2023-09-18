@@ -97,10 +97,10 @@ export default function Bottombar({ id, user }) {
           onChange={(e) => setInput(e.target.value)}
           value={input}
         />
-        <div className="flex flex-row justify-center items-center">
-          <div className="formInput w-full sm:w-2/5">
+        <div className="sendIconDiv flex flex-row justify-center items-center">
+          <div className="formInput">
             <label htmlFor="file">
-              <AttachFileIcon className="w-5 h-5 dark:text-slate-50" />
+              <AttachFileIcon className="text-2xl md:text-4xl dark:text-slate-50" />
             </label>
             <input
               type="file"
@@ -114,9 +114,14 @@ export default function Bottombar({ id, user }) {
             className={`${ !input.trim() && !data.downloadURL ? "d-none" : "rounded-sm p-2 dark:text-slate-50 focus:outline-none"}`}
             disabled={!input.trim() && !data.downloadURL}
           >
-            <SendIcon />
+            <SendIcon className="sendIcon p-2 text-2xl md:text-4xl rounded-full"/>
           </IconButton>
-          <SendIcon className={`${ !input.trim() && !data.downloadURL ? "rounded-sm p-2 dark:text-slate-50/50 focus:outline-none" : "d-none"}`} />
+          <IconButton
+            className={`${ !input.trim() && !data.downloadURL ? "rounded-sm p-2 dark:text-slate-50 bg-gray-900/50 focus:outline-none" : "d-none"}`}
+            disabled={!input.trim() && !data.downloadURL}
+          >
+            <SendIcon className="sendIcon p-2 text-2xl md:text-4xl rounded-full opacity-50" />
+          </IconButton>
         </div>
       </div>
     </FormControl>

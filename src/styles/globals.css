@@ -23,8 +23,6 @@
   @apply !w-full py-5 !text-base;
 }
 .backIcon {
-  font-size: 30px;
-  font-weight: bold;
   color: teal;
   transition: 0.1s;
 }
@@ -85,23 +83,20 @@
   height: 10%;
 }
 .inputField {
-  width: 91%;
+  width: 92%;
   border: 2px solid teal;
 }
 .inputField::-moz-focus-outer {
   border: 2px solid rgba(0, 128, 128, 0.726);
 }
-.sendIcon {
+.sendIconDiv {
   width: 8%;
-  height: 97%;
-  font-family: serif;
-  border: none;
+}
+.sendIcon {
   background-color: teal;
-  color: white;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
-  text-align: center;
-  text-decoration: none;
 }
 .top,
 .bottom {
@@ -144,4 +139,22 @@
 .right form button disabled, .right .form button disabled {
   background-color: rgba(3, 92, 92, 0.322);
   cursor: not-allowed;
+}
+@media screen and (max-width: 940px) {
+  .inputField {
+    width: 90%;
+    border: 2px solid teal;
+  }
+  .sendIconDiv {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .inputField {
+    width: 80%;
+    border: 2px solid teal;
+  }
+  .sendIconDiv {
+    width: 20%;
+  }
 }
