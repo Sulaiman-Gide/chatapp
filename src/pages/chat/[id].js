@@ -124,7 +124,7 @@ export default function Chat() {
           >
             <div
               className={`messageText rounded-lg flex shadow-md justify-center ${
-                sender ? "items-end bg-slate-50" : "items-start"
+                sender ? "items-end bg-slate-50 dark:bg-slate-50 shadow-sm" : "items-start bg-slate-100"
               } flex-col pt-2 pb-1 px-3`}
             >
               {isImage ? ( 
@@ -305,16 +305,14 @@ export default function Chat() {
           <div className='h-screen bg-transparent lg:p-2 cursor-pointer'>
             <div className='bg-slate-50/25 dark:bg-gray-900 rounded-lg h-full shadow-md'>
               <div className='bodyTop shadow-sm flex items-center top-0 sticky mx-auto px-2'>               
-                <ArrowBackIcon className="text-5xl dark:text-slate-50 backIcon" onClick={handleSwitch}/>
-                    <div className='pl-3'>
-                      { users && <h1 className='text-3xl md:text-2xl dark:text-slate-50'>{secondValue}</h1>}
-                    </div>
+                <ArrowBackIcon className=" dark:text-slate-50 backIcon" onClick={handleSwitch}/>
+                  { users && <h1 className='text-xl md:text-2xl dark:text-slate-50 pl-1 pt-1'>{secondValue}</h1>}
               </div>
 
               <div className="messageContainer">
                 {getMessages()}
               </div>
-              <Flex className="bodyBottom flex flex-col ">
+              <Flex className="bodyBottom flex justify-center flex-col ">
                 <Bottombar id={id} user={user} />
               </Flex>
             </div>

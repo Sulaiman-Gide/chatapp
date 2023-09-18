@@ -116,6 +116,7 @@ export default function Bottombar({ id, user }) {
           >
             <SendIcon />
           </IconButton>
+          <SendIcon className={`${ !input.trim() && !data.downloadURL ? "rounded-sm p-2 dark:text-slate-50/50 focus:outline-none" : "d-none"}`} />
         </div>
       </div>
     </FormControl>

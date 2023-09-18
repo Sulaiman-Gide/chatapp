@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import {motion} from 'framer-motion';
 import { Inter } from 'next/font/google'
 import Chat from '../components/Chat';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import PhoneInput from 'react-phone-input-2'
 import "react-phone-input-2/lib/style.css";
 import { auth, db, storage  } from "../components/firebase";
@@ -20,7 +17,6 @@ import {
 } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import "react-toastify/dist/ReactToastify.css";
-import { FiDivideCircle } from "react-icons/fi";
 
 const inter = Inter({ subsets: ['latin'] })
 const userInputs = [
@@ -265,9 +261,7 @@ export default function Home(props) {
                   <div className="w-screen h-screen">
                     {showOTP ? (
                       <div className='w-full h-full flex justify-center items-center flex-col'>
-                        <div className="mx-auto rounded-full">
-                          <img className='relative rounded-full h-20 w-32 md:w-52 md:h-40 mb-2 mx-auto object-cover border-2 border-gray-200' src='/logo_2.jpg' alt=''/>
-                        </div>
+                        <img className='relative h-52 w-52 md:w-60 md:h-60 mx-auto object-cover' src='/logo_3.jpg' alt=''/>
                         <label
                           htmlFor="otp"
                           className="font-bold text-2xl text-center my-3 font-serif"
@@ -302,20 +296,22 @@ export default function Home(props) {
                       </div>
                     ) : (
                       <div className='w-full h-screen flex justify-center items-center flex-col'>
-                        <img className='relative rounded-full h-20 w-32 md:w-52 md:h-40 mb-2 mx-auto object-cover border-2 border-gray-200' src='/logo_2.jpg' alt=''/>
-                        <h1
-                          className="font-bold text-2xl text-center mt-3 mb-1 font-serif"
-                        >
-                          Enter your phone number
-                        </h1>
-                        <p className="text-base text-center font-serif">You will receive a 6 digit code for phone number verification</p>
-                        <div className="flex justify-center items-center">
-                          <PhoneInput  
-                            className='phone-input-no-outline'
-                            country={"ng"} 
-                            value={ph} 
-                            onChange={setPh}
-                          />
+                        <img className='relative h-52 w-52 md:w-60 md:h-60 mx-auto object-cover' src='/logo_3.jpg' alt=''/>
+                        <div className="px-1">
+                          <h1
+                            className="font-bold text-2xl sm:text-center mb-1 font-serif"
+                          >
+                            Enter your phone number
+                          </h1>
+                          <p className="text-base pl-1 mt-2 sm:pl-0 sm:text-center font-serif">You will receive a 6 digit code for phone number verification</p>
+                          <div className="flex px-2 md:p-0 justify-center items-center">
+                            <PhoneInput  
+                              className='phone-input-no-outline'
+                              country={"ng"} 
+                              value={ph} 
+                              onChange={setPh}
+                            />
+                          </div>
                         </div>
                         <button
                           onClick={onSignup}
